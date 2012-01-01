@@ -1,0 +1,89 @@
+#cmpopt ppout 1
+
+#runtime "hsp3cl"
+
+#uselib "winmm.dll"
+#cfunc timeGetTime "timeGetTime"
+
+#define __copyhsp
+
+/*
+#module
+
+#deffunc local hoge int
+	mes "mod_hoge : " + p1
+	tikuwa
+	return
+
+
+#deffunc local tikuwa onexit
+	mes "mod on_exit"
+	return
+
+#global
+
+
+#module struct hoge, fuga
+
+#modinit
+	mes "mod_init!"
+	return
+
+#modfunc oppepe int p1
+	mes "mod_struct : " + p1
+	return
+
+#global
+
+
+//#struct2 struct var hoge@struct,var fuga@struct
+##5000
+mes "\ \a a"
+/*mes "\*/
+/*mes "\a\n\a"
+
+#define g 100
+//komennt
+mes g
+hoge@m0 50
+
+newmod fuga, struct
+
+oppepe fuga , 5*/
+//mes 200
+
+//gosub *hoge
+
+//mes 500
+
+//if 1 : mes "true" + 5 + " : ‚¿‚­‚í": else : mes 4.5
+
+resume
+
+#ifndef __copyhsp
+time = double( timeGetTime() )
+#endif
+
+
+/*repeat 10000
+mes "true"
+loop*/
+
+
+repeat 1000
+mes "true" + 5 + " : ‚¿‚­‚í" + 5 +" : ‚¿‚­‚í" + 80 + " : ‚¿‚­‚í" + "true" + 5 + " : ‚¿‚­‚í" + 5 +" : ‚¿‚­‚í" + 80 + " : ‚¿‚­‚í"
+//mes "true"// + "5" + " : ‚¿‚­‚í" + "5" +" : ‚¿‚­‚í" + "80" + " : ‚¿‚­‚í" + "true" + "5" + " : ‚¿‚­‚í" + "5" +" : ‚¿‚­‚í" + "80" + " : ‚¿‚­‚í"
+loop
+
+repeat 10000000 : loop
+
+#ifndef __copyhsp
+mes "" + double( timeGetTime() - time ) / 1000.0+ "sec."
+#endif
+yield
+
+stop
+
+*hoge
+	mes "‚Ý‚Ý‚½‚Ô"
+	return
